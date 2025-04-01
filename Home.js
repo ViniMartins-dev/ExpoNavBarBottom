@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, ScrollView } from 'react-native';
 import { SearchBar } from '@rneui/themed';
 
 export default function Home() {
@@ -7,11 +7,13 @@ export default function Home() {
     <View style={estilo.container}>
       <SearchBar
         platform="android"
-        placeholder="Type query here..."
+        placeholder="Pesquisar..."
         placeholderTextColor="#888"
         cancelButtonTitle="Cancel"
       />
-      <Text style={estilo.titulo}>Home</Text>
+      <ScrollView>
+          {/* colocar os cards aqui */}
+      </ScrollView>
     </View>
   );
 }

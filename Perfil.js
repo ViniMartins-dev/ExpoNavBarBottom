@@ -1,10 +1,16 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Image } from 'react-native';
 
 export default function Perfil() {
   return (
     <View style={estilo.container}>
-      <Text style={estilo.titulo}>Dados dos usuários</Text>
+      <View style={estilo.perfil}>
+        <View style={estilo.imagemContainer}></View>
+          <View style={estilo.nomeContainer}>
+            <Text>Nome: nome</Text>
+            <Text></Text>
+          </View>
+      </View>
     </View>
   );
 }
@@ -12,9 +18,26 @@ export default function Perfil() {
 const estilo = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
     backgroundColor: '#b8393',
     padding: 10,
+  },
+  perfil: {
+    backgroundColor: '#c0c0c0',
+    padding: 10,
+    height: 300,
+    borderRadius: 3,
+    flexDirection:  'row'
+  },
+  imagemContainer: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: '100%',
+    height: 100,
+    width: 100,
+    marginRight: 10
+  },
+  nomeContainer: {
+    backgroundColor: '#FFFFFF',
+    padding: 3
   },
   titulo: {
     margin: 20,
