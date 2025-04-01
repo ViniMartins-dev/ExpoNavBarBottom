@@ -1,8 +1,9 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Entypo from '@expo/vector-icons/Entypo';
 
 import Home from './Home';
-import Alerta from './Alerta';
+import Playlist from './Playlist';
 import Usuarios from './Usuarios';
 
 const Tab = createBottomTabNavigator();
@@ -20,11 +21,11 @@ export default function Routes() {
         }} 
       />
       <Tab.Screen 
-        name="Alerta" 
-        component={Alerta} 
+        name="Playlist" 
+        component={Playlist} 
         options={{
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="bell" color={color} size={size} />
+            <Entypo name="note" color={color} size={size -4} />
           ),
         }} 
       />
