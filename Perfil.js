@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
-export default function Usuarios() {
+export default function Perfil() {
   return (
     <View style={estilo.container}>
       <Text style={estilo.titulo}>Dados dos usuários</Text>

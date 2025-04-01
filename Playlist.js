@@ -46,7 +46,7 @@ const info = [
 
 const Item = ({ titulo, artista, imagem }) => (
  
-
+  
 
   <View style={estilo.item}>
     <View style={estilo.imagem}>
@@ -77,7 +77,7 @@ const estilo = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: '#0F0F0F',
+    backgroundColor: '#FFFFFF',
     padding: 10,
   },
   titulo: {
@@ -86,7 +86,7 @@ const estilo = StyleSheet.create({
     textAlign: 'center',
   },
   item: {
-    backgroundColor: '#232D3F',
+    backgroundColor: '#DFDFDF',
     padding: 10,
     marginVertical: 8,
     marginHorizontal: 10,
@@ -96,14 +96,14 @@ const estilo = StyleSheet.create({
   },
   faixa: {
     fontSize: 25,
-    color: '#008170'
+    color: '#000000'
   },
   artista: {
     fontSize: 15,
-    color: '#008170'
+    color: '#000000'
   },
   imagem: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#000000',
     height: 80,
     width: 80,
     objectFit: 'cover',

@@ -4,7 +4,7 @@ import Entypo from '@expo/vector-icons/Entypo';
 
 import Home from './Home';
 import Playlist from './Playlist';
-import Usuarios from './Usuarios';
+import Perfil from './Perfil';
 
 const Tab = createBottomTabNavigator();
 
@@ -30,8 +30,8 @@ export default function Routes() {
         }} 
       />
       <Tab.Screen 
-        name="Usuarios" 
-        component={Usuarios} 
+        name="Perfil" 
+        component={Perfil} 
         options={{
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="account" color={color} size={size} />
