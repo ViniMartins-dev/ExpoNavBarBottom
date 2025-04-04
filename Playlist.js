@@ -45,9 +45,6 @@ const info = [
 ];
 
 const Item = ({ titulo, artista, imagem }) => (
- 
-  
-
   <View style={estilo.item}>
     <View style={estilo.imagem}>
       
@@ -58,7 +55,6 @@ const Item = ({ titulo, artista, imagem }) => (
     </View>
   </View>
 );
-
 
 export default function Playlist() {
   return (

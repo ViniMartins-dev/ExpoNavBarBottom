@@ -38,8 +38,17 @@ export default function Home() {
         onChangeText={(texto) => setBusca(texto)}
         value={busca}
         onSubmitEditing={handlePesquisar}
-        onClear={() => setMostrarResultados(false)}
+        onClear={() => {
+          setMostrarResultados(false);
+          setBusca('');
+        }}
       />
+
+      {!mostrarResultados && busca.trim() === '' && (
+        <View style={estilo.textoCentralContainer}>
+          <Text style={estilo.textoCentral}>Faça uma pesquisa</Text>
+        </View>
+      )}
 
       {mostrarResultados && (
         <FlatList
@@ -81,5 +90,14 @@ const estilo = StyleSheet.create({
     fontSize: 14,
     color: '#4b5563',
     marginTop: 4,
+  },
+  textoCentralContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  textoCentral: {
+    fontSize: 18,
+    color: '#6b7280',
   },
 });
