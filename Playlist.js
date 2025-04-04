@@ -1,57 +1,23 @@
 import React from 'react';
-import { Text, View, SafeAreaView, StyleSheet, FlatList, Image } from 'react-native';
+import { Text, View, SafeAreaView, StyleSheet, FlatList } from 'react-native';
 
 const info = [
-  {
-    titulo: 'Musica 1',
-    artista: 'artista',
-    imagem: './assets/metallicaAlbumCover.jpg'
-  },
-  {
-    titulo: 'Musica 2',
-    artista: 'artista',
-    imagem: ''
-  },
-  {
-    titulo: 'Musica 3',
-    artista: 'artista',
-    imagem: ''
-  },
-  {
-    titulo: 'Musica 4',
-    artista: 'artista',
-    imagem: ''
-  },
-  {
-    titulo: 'Musica 5',
-    artista: 'artista',
-    imagem: ''
-  },
-  {
-    titulo: 'Musica 6',
-    artista: 'artista',
-    imagem: ''
-  },
-  {
-    titulo: 'Musica 7',
-    artista: 'artista',
-    imagem: ''
-  },
-  {
-    titulo: 'Musica 8',
-    artista: 'artista',
-    imagem: ''
-  },
+  { titulo: 'Música 1', artista: 'Artista 1', imagem: '' },
+  { titulo: 'Música 2', artista: 'Artista 2', imagem: '' },
+  { titulo: 'Música 3', artista: 'Artista 3', imagem: '' },
+  { titulo: 'Música 4', artista: 'Artista 4', imagem: '' },
+  { titulo: 'Música 5', artista: 'Artista 5', imagem: '' },
+  { titulo: 'Música 6', artista: 'Artista 6', imagem: '' },
+  { titulo: 'Música 7', artista: 'Artista 7', imagem: '' },
+  { titulo: 'Música 8', artista: 'Artista 8', imagem: '' },
 ];
 
-const Item = ({ titulo, artista, imagem }) => (
-  <View style={estilo.item}>
-    <View style={estilo.imagem}>
-      
-    </View>
-    <View>
-      <Text style={estilo.faixa}>{titulo}</Text>
-      <Text style={estilo.artista}>{artista}</Text>
+const Item = ({ titulo, artista }) => (
+  <View style={estilo.card}>
+    <View style={estilo.imagemPlaceholder} />
+    <View style={estilo.textos}>
+      <Text style={estilo.cardTitulo}>{titulo}</Text>
+      <Text style={estilo.cardDescricao}>{artista}</Text>
     </View>
   </View>
 );
@@ -64,6 +30,7 @@ export default function Playlist() {
         renderItem={({ item }) => (
           <Item titulo={item.titulo} artista={item.artista} />
         )}
+        contentContainerStyle={estilo.resultadoContainer}
       />
     </SafeAreaView>
   );
@@ -72,40 +39,42 @@ export default function Playlist() {
 const estilo = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#f1f5f9',
     padding: 10,
   },
-  titulo: {
-    margin: 20,
-    fontSize: 20,
-    textAlign: 'center',
+  resultadoContainer: {
+    paddingBottom: 16,
   },
-  item: {
-    backgroundColor: '#DFDFDF',
-    padding: 10,
+  card: {
+    backgroundColor: '#ffffff',
+    padding: 15,
     marginVertical: 8,
-    marginHorizontal: 10,
-    borderRadius: 5,
-    height: 100,
-    flexDirection: 'row'
+    borderRadius: 10,
+    elevation: 3,
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
-  faixa: {
-    fontSize: 25,
-    color: '#000000'
+  imagemPlaceholder: {
+    backgroundColor: '#d1d5db',
+    height: 60,
+    width: 60,
+    borderRadius: 8,
+    marginRight: 15,
   },
-  artista: {
-    fontSize: 15,
-    color: '#000000'
+  textos: {
+    flex: 1,
   },
-  imagem: {
-    backgroundColor: '#000000',
-    height: 80,
-    width: 80,
-    objectFit: 'cover',
-    marginRight: 10
+  cardTitulo: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#1f2937',
   },
-  caixa: {
-    flexDirection: 'column'
-  }
+  cardDescricao: {
+    fontSize: 14,
+    color: '#4b5563',
+    marginTop: 4,
+  },
 });
